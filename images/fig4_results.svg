@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="740" viewBox="0 0 1280 740" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ef4444"/><stop offset="1" stop-color="#dc2626"/></linearGradient>
+    <linearGradient id="gDark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b91c1c"/><stop offset="1" stop-color="#991b1b"/></linearGradient>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.15"/></filter>
+  </defs>
+  <rect x="0" y="0" width="1280" height="740" fill="#f8fafc"/>
+  <text x="640" y="50" text-anchor="middle" font-size="25" font-weight="700" fill="#0f172a">图4　Slopsquatting 攻击与防御对比（每场景 8 轮，模型 qwen2.5:7b）</text>
+  <line x1="150" y1="610.0" x2="1160" y2="610.0" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="615.0" text-anchor="end" font-size="14" fill="#64748b">0</text>
+  <line x1="150" y1="555.6" x2="1160" y2="555.6" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="560.6" text-anchor="end" font-size="14" fill="#64748b">1</text>
+  <line x1="150" y1="501.2" x2="1160" y2="501.2" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="506.2" text-anchor="end" font-size="14" fill="#64748b">2</text>
+  <line x1="150" y1="446.9" x2="1160" y2="446.9" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="451.9" text-anchor="end" font-size="14" fill="#64748b">3</text>
+  <line x1="150" y1="392.5" x2="1160" y2="392.5" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="397.5" text-anchor="end" font-size="14" fill="#64748b">4</text>
+  <line x1="150" y1="338.1" x2="1160" y2="338.1" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="343.1" text-anchor="end" font-size="14" fill="#64748b">5</text>
+  <line x1="150" y1="283.8" x2="1160" y2="283.8" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="288.8" text-anchor="end" font-size="14" fill="#64748b">6</text>
+  <line x1="150" y1="229.4" x2="1160" y2="229.4" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="234.4" text-anchor="end" font-size="14" fill="#64748b">7</text>
+  <line x1="150" y1="175.0" x2="1160" y2="175.0" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="138" y="180.0" text-anchor="end" font-size="14" fill="#64748b">8</text>
+  <text x="66" y="392" text-anchor="middle" font-size="14" fill="#475569" transform="rotate(-90 66 392)">次数 / 8 轮</text>
+  <text x="276.2" y="636" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">基线</text>
+  <text x="276.2" y="658" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">（通用任务）</text>
+  <rect x="453.8" y="555.6" width="44" height="54.4" rx="6" fill="url(#gRed)" filter="url(#shadow)"/>
+  <text x="475.8" y="547.6" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">1</text>
+  <rect x="503.8" y="555.6" width="44" height="54.4" rx="6" fill="url(#gDark)" filter="url(#shadow)"/>
+  <text x="525.8" y="547.6" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">1</text>
+  <text x="528.8" y="636" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">幻觉诱导</text>
+  <text x="528.8" y="658" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">（小众任务）</text>
+  <rect x="706.2" y="446.9" width="44" height="163.1" rx="6" fill="url(#gRed)" filter="url(#shadow)"/>
+  <text x="728.2" y="438.9" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">3</text>
+  <rect x="756.2" y="446.9" width="44" height="163.1" rx="6" fill="url(#gDark)" filter="url(#shadow)"/>
+  <text x="778.2" y="438.9" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">3</text>
+  <text x="781.2" y="636" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">文档投毒</text>
+  <text x="781.2" y="658" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">（带投毒 README）</text>
+  <rect x="958.8" y="446.9" width="44" height="163.1" rx="6" fill="url(#gRed)" filter="url(#shadow)"/>
+  <text x="980.8" y="438.9" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">3</text>
+  <rect x="1058.8" y="446.9" width="44" height="163.1" rx="6" fill="url(#gAmber)" filter="url(#shadow)"/>
+  <text x="1080.8" y="438.9" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f172a">3</text>
+  <text x="1033.8" y="636" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">注册表校验</text>
+  <text x="1033.8" y="658" text-anchor="middle" font-size="14.5" font-weight="600" fill="#334155">防御</text>
+  <line x1="150" y1="610" x2="1160" y2="610" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="350" y="116" width="24" height="16" rx="4" fill="url(#gRed)"/>
+  <text x="382" y="129" font-size="14" fill="#334155">建议攻击者包</text>
+  <rect x="660" y="116" width="24" height="16" rx="4" fill="url(#gDark)"/>
+  <text x="692" y="129" font-size="14" fill="#334155">恶意安装（凭据外带）</text>
+  <rect x="970" y="116" width="24" height="16" rx="4" fill="url(#gAmber)"/>
+  <text x="1002" y="129" font-size="14" fill="#334155">被注册表校验拦截</text>
+</svg>

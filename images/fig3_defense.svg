@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="740" viewBox="0 0 1280 740" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef2f7"/>
+    </linearGradient>
+    <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#475569"/>
+    </marker>
+    <marker id="arrRed" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="740" fill="url(#bg)"/>
+  <text x="640" y="44" text-anchor="middle" font-size="25" font-weight="700" fill="#0f172a">图3　Slopsquatting 的三道防线：让“AI 建议的安装命令”不再危险</text>
+
+  <!-- 攻击者 -->
+  <g filter="url(#shadow)">
+    <rect x="500" y="80" width="280" height="56" rx="14" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <text x="640" y="104" text-anchor="middle" font-size="16" font-weight="700" fill="#991b1b">幻觉包名 / 投毒文档</text>
+    <text x="640" y="126" text-anchor="middle" font-size="12.5" fill="#7f1d1d">目标：让开发者安装攻击者抢注的包</text>
+  </g>
+  <path d="M640,136 L640,168" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 第一道：建议前校验 -->
+  <g filter="url(#shadow)">
+    <rect x="170" y="176" width="940" height="100" rx="16" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <rect x="170" y="176" width="940" height="34" rx="16" fill="#dbeafe"/>
+    <rect x="170" y="196" width="940" height="14" fill="#dbeafe"/>
+    <text x="640" y="199" text-anchor="middle" font-size="15" font-weight="700" fill="#1e40af">第一道防线 · 建议前校验（编码助手侧）</text>
+    <text x="210" y="240" font-size="13.5" fill="#334155">① 安装建议必须携带“官方索引校验”结果：包名不在官方索引 → 直接提示拒绝</text>
+    <text x="210" y="260" font-size="13.5" fill="#334155">② 名称归一化比对（大小写 / 连字符 / 下划线 / 点），防止视觉相似包名绕过</text>
+  </g>
+  <path d="M640,276 L640,308" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 第二道：安装前校验 -->
+  <g filter="url(#shadow)">
+    <rect x="170" y="316" width="940" height="100" rx="16" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+    <rect x="170" y="316" width="940" height="34" rx="16" fill="#fef3c7"/>
+    <rect x="170" y="336" width="940" height="14" fill="#fef3c7"/>
+    <text x="640" y="339" text-anchor="middle" font-size="15" font-weight="700" fill="#92400e">第二道防线 · 安装前校验（工具链侧）</text>
+    <text x="210" y="380" font-size="13.5" fill="#334155">① 强制使用官方索引源，禁止第三方源 / 私有源外联</text>
+    <text x="210" y="400" font-size="13.5" fill="#334155">② 依赖锁文件 + 哈希校验：requirements.txt.lock / pipenv / poetry.lock 固定版本与摘要</text>
+  </g>
+  <path d="M640,416 L640,448" stroke="#475569" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 第三道：执行隔离 -->
+  <g filter="url(#shadow)">
+    <rect x="170" y="456" width="940" height="120" rx="16" fill="#ffffff" stroke="#16a34a" stroke-width="2.5"/>
+    <rect x="170" y="456" width="940" height="34" rx="16" fill="#dcfce7"/>
+    <rect x="170" y="476" width="940" height="14" fill="#dcfce7"/>
+    <text x="640" y="479" text-anchor="middle" font-size="15" font-weight="700" fill="#166534">第三道防线 · 执行隔离（环境侧）</text>
+    <text x="210" y="520" font-size="13.5" fill="#334155">① 依赖安装在隔离环境（容器 / venv / 沙箱），禁止安装脚本访问项目机密与网络</text>
+    <text x="210" y="540" font-size="13.5" fill="#334155">② 凭据审计：.env / 密钥目录对安装脚本不可见；CI 中安装步骤使用最小权限令牌</text>
+    <text x="210" y="560" font-size="13.5" fill="#334155">③ 出网监控：安装阶段出现异常外联（非官方源域名）立即阻断并告警</text>
+  </g>
+
+  <rect x="430" y="600" width="420" height="60" rx="16" fill="url(#gGreen)"/>
+  <text x="640" y="626" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">恶意包可能仍被建议，但无法被安装生效</text>
+  <text x="640" y="648" text-anchor="middle" font-size="13" fill="#f0fdf4">三道防线中，安装前校验与执行隔离是硬兜底（见第 5 节实测）</text>
+
+  <path d="M150,108 C90,200 90,520 120,600" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7 6" fill="none" marker-end="url(#arrRed)"/>
+  <text x="70" y="380" text-anchor="middle" font-size="13.5" font-weight="700" fill="#dc2626" transform="rotate(-90 70 380)">恶意安装路径（在第二 / 三道防线被阻断）</text>
+</svg>
