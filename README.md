@@ -30,6 +30,8 @@
 └── LICENSE               # MIT
 ```
 
+对应技术文章：请去奇安信攻防社区搜索，关注lxtoxyf。
+
 ## 环境要求
 
 - Python 3.8+（**零第三方依赖**，仅标准库 `json` / `re` / `urllib` / `os`）
